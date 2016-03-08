@@ -16,7 +16,25 @@ angular.module('starter.controllers', [])
     Chats.remove(chat);
   };
 })
+// Controler
+.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+    $scope.data = {};
+ 
+    $scope.login = function() {
 
+      //Appel du service LoginService
+        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+          //Les identifiants sont correctes
+            $state.go('tab.dash');
+        }).error(function(data) {
+          //les identifiants sont incorrectes
+            var alertPopup = $ionicPopup.alert({
+                title: 'Mauvais identifiant',
+                template: 'Vérifier vos informations'
+            });
+        });
+    }
+})
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
