@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ngResource'])
 
 
 .service('LoginService', function($q) {
@@ -29,4 +29,21 @@ angular.module('starter.services', [])
             return promise;
         }
     }
-});
+})
+
+    .factory('ActivityFactory', function($resource,$http) {
+        return {
+            getAll: function() {
+                /*var r =  $resource('http://localhost:8000/api/activity/getall');
+                return r.get()
+                    .$promise.then(function(data) {
+                        console.log(data.activities);
+                    });*/
+                $http.get('http://localhost:8000/api/activity/getall').then(function(data) {
+                    console.log(data.data);
+                    return data.data;
+                });
+            }
+        };
+
+    });

@@ -2,7 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('bestWesternCtrl', function($scope) {})
+.controller('bestWesternCtrl', function($scope,ActivityFactory) {
+     $scope.activities = ActivityFactory.getAll();
+    console.log(ActivityFactory.getAll());
+
+})
 
 .controller('favorisCtrl', function($scope) {})
 
