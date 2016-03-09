@@ -10,6 +10,10 @@ angular.module('starter.controllers', [])
     // err.status will contain the status code
   })
 
+.controller('bestWesternCtrl', function($scope,ActivityFactory) {
+     $scope.activities = ActivityFactory.getAll();
+    console.log(ActivityFactory.getAll());
+
 })
 
 .controller('favorisCtrl', function($scope) {})
