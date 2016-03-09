@@ -1,15 +1,5 @@
 angular.module('starter.controllers', [])
 
-.controller('bestWesternCtrl', function($scope) {
-  console.log('ok');
-  $http.get('http://localhost:8100/accueil').then(function(resp) {
-    console.log('Success', resp);
-    // For JSON responses, resp.data contains the result
-  }, function(err) {
-    console.error('ERR', err);
-    // err.status will contain the status code
-  })
-
 .controller('bestWesternCtrl', function($scope,ActivityFactory) {
      $scope.activities = ActivityFactory.getAll();
     console.log(ActivityFactory.getAll());
