@@ -31,6 +31,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       templateUrl: 'templates/login.html',
       controller:'LoginCtrl'
   })
+
     .state('result', {
     url: '/result/:result',
     templateUrl: 'templates/result.html',
@@ -80,7 +81,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       }
     }
   })
-  
+
   .state('tab.profile', {
     url: '/profile',
     views: {
