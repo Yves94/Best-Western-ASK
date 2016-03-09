@@ -58,7 +58,7 @@ input:-ms-input-placeholder {
 	height:20px;
 }
 #connexion{
-	background-image: url(/img/bg-hotel.jpg);
+	background-image: url(../img/bg-hotel.jpg);
 	background-size: cover;
 	top:0;
 	left: 0;
