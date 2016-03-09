@@ -26,66 +26,64 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    .state('home', {
-    url: '/home',
-    templateUrl: 'templates/home.html'
-  })
-      .state('login', {
+    .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
       controller:'LoginCtrl'
-  })
-  // setup an abstract state for the tabs directive
+    })
+
+    // setup an abstract state for the tabs directive
     .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+
+    // Each tab has its own nav history stack:
+
+    .state('tab.accueil', {
+      url: '/accueil',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-accueil': {
+          templateUrl: 'templates/accueil.html',
+          controller: 'bestWesternCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.favoris', {
+      url: '/favoris',
+      views: {
+        'tab-favoris': {
+          templateUrl: 'templates/favoris.html',
+          controller: 'favorisCtrl'
+        }
       }
-    }
-  });
+    })
+
+    .state('tab.historique', {
+      url: '/historique',
+      views: {
+        'tab-historique': {
+          templateUrl: 'templates/historique.html',
+          controller: 'historiqueCtrl'
+        }
+      }
+    })
+
+    .state('tab.profile', {
+      url: '/profile',
+      views: {
+        'tab-profile': {
+          templateUrl: 'templates/profile.html',
+          controller: 'profileCtrl'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/dash');
     
-$urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/login');
 
 });
