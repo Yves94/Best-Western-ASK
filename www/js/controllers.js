@@ -28,6 +28,7 @@ angular.module('starter.controllers', [])
             });
         });
     }
+})
 
 .controller('askCtrl', function($scope, $state){
   $scope.search = function(result){
