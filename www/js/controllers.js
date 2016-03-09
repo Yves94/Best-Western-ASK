@@ -43,4 +43,14 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('askCtrl', function($scope, $state){
+  $scope.search = function(result){
+    $state.go('result',{result:result})
+  }
+})
+
+.controller('resultCtrl', function($scope, $stateParams){
+    $scope.result = $stateParams.result
 });

@@ -1,12 +1,4 @@
 /* Empty. Add your own CSS if you like */
-#pane{
-	background: url('../img/screen.png');
-   -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-}
-
-/* Empty. Add your own CSS if you like */
 label{
 	text-align: left;
 }
@@ -58,7 +50,7 @@ input:-ms-input-placeholder {
 	height:20px;
 }
 #connexion{
-	background-image: url(/img/bg-hotel.jpg);
+	background-image: url(../img/bg-hotel.jpg);
 	background-size: cover;
 	top:0;
 	left: 0;
