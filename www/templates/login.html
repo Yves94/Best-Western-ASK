@@ -8,6 +8,42 @@
               <input type="password" placeholder="Password" ng-model="data.password">
           </label>
       </div>
-      <button class="button button-block button-calm" ng-click="login()">Login</button>
+      <button class="button button-block button-calm" ">Login</button>
   </ion-content>
 </ion-view>
+
+<!--
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Back</ion-nav-back-button>
+</ion-nav-bar>
+-->
+<ion-view title="Connexion" id="connexion" >
+  <ion-content padding="true" style="text-align: center;" scroll="false">
+    <!-- <img src="img/logo-3.png" style="width: 20%; height: auto; margin: 10px auto;"> -->
+    <img src="img/logo-ASK2.png" class="logo">
+  
+    <form>
+      <label>
+      <div class="input-content">
+        <input type="text" placeholder="Reward Number" ng-model="data.username" class="log" style="height: 45px; color: #FFFFFF; font-size: 16px;">
+        <img src="img/profil-icon.png" class="input-img"alt="">
+      </div>
+    
+  </label>
+  <label>
+    <div class="input-content">
+      <input type="text" placeholder="Last Name" ng-model="data.password" style="height: 45px; color: #FFFFFF;font-size: 16px">
+      <img src="img/key-icon.png" class="input-img" alt="">
+    </div>
+    
+  </label>
+      <!-- <button class="button button-positive button-block" type="submit" ng-click="save(user)">Connexion</button> -->
+      <a class="forgot" href="#">Forgot Password ?</a>
+      <a ui-sref="ask" class="button button-block connect"ng-click="login()">SIGN IN</a>
+    </form>
+    <div class="sign">
+       <span class="create">Don't have an account ?</span><br>
+      <a href="#" class="signup">SIGN UP</a>
+    </div>
+
+  </ion-content>

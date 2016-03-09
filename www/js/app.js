@@ -30,57 +30,66 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       url: '/login',
       templateUrl: 'templates/login.html',
       controller:'LoginCtrl'
-    })
+  })
+    .state('result', {
+    url: '/result/:result',
+    templateUrl: 'templates/result.html',
+    controller: 'resultCtrl'
+  })
+  
+  .state('ask', {
+    url: '/ask',
+    templateUrl: 'templates/ask.html',
+    controller: 'askCtrl'
+  })
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: '/tab',
-      abstract: true,
-      templateUrl: 'templates/tabs.html'
-    })
+  .state('tab', {
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'templates/tabs.html'
+  })
 
-    // Each tab has its own nav history stack:
+  // Each tab has its own nav history stack:
 
-    .state('tab.accueil', {
-      url: '/accueil',
-      views: {
-        'tab-accueil': {
-          templateUrl: 'templates/accueil.html',
-          controller: 'bestWesternCtrl'
-        }
+  .state('tab.accueil', {
+    url: '/accueil',
+    views: {
+      'tab-accueil': {
+        templateUrl: 'templates/accueil.html',
+        controller: 'bestWesternCtrl'
       }
-    })
+    }
+  })
 
-    .state('tab.favoris', {
-      url: '/favoris',
-      views: {
-        'tab-favoris': {
-          templateUrl: 'templates/favoris.html',
-          controller: 'favorisCtrl'
-        }
+  .state('tab.favoris', {
+    url: '/favoris',
+    views: {
+      'tab-favoris': {
+        templateUrl: 'templates/favoris.html',
+        controller: 'favorisCtrl'
       }
-    })
+    }
+  })
 
-    .state('tab.historique', {
-      url: '/historique',
-      views: {
-        'tab-historique': {
-          templateUrl: 'templates/historique.html',
-          controller: 'historiqueCtrl'
-        }
+  .state('tab.historique', {
+    url: '/historique',
+    views: {
+      'tab-historique': {
+        templateUrl: 'templates/historique.html',
+        controller: 'historiqueCtrl'
       }
-    })
-
-    .state('tab.profile', {
-      url: '/profile',
-      views: {
-        'tab-profile': {
-          templateUrl: 'templates/profile.html',
-          controller: 'profileCtrl'
-        }
+    }
+  })
+  
+  .state('tab.profile', {
+    url: '/profile',
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/profile.html',
+        controller: 'profileCtrl'
       }
-    });
-
+    }
+  });
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/dash');
     

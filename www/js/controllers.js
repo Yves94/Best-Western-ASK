@@ -28,4 +28,13 @@ angular.module('starter.controllers', [])
             });
         });
     }
+
+.controller('askCtrl', function($scope, $state){
+  $scope.search = function(result){
+    $state.go('result',{result:result})
+  }
+})
+
+.controller('resultCtrl', function($scope, $stateParams){
+    $scope.result = $stateParams.result
 });
