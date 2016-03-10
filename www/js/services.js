@@ -1,6 +1,6 @@
 angular.module('starter.services', ['ngResource'])
 
-.service('LoginService', function($q,$http,CONFIG) {
+.service('LoginService', function($q, $http, CONFIG) {
     return {
         loginUser: function(name, pw) {
             var def = $q.defer();
@@ -16,14 +16,11 @@ angular.module('starter.services', ['ngResource'])
     }
 })
 
-.factory('FavorisFactory', function($resource, $http) {
+.factory('FavorisFactory', function($resource, $http, CONFIG) {
     return {
         getAll: function($scope) {
             $http.get(CONFIG.api_url + '/favoris/getall').then(function(data) {
                 if (typeof data.data.favoris != 'undefined') {
-                    $.each(data.data.favoris, function(index, value){
-                        console.log(value.title);
-                    });
                     $scope.favoris = data.data.favoris;
                 }
             });
@@ -31,7 +28,7 @@ angular.module('starter.services', ['ngResource'])
     };
 })
 
-.factory('ActivityFactory', function($resource,$http,CONFIG) {
+.factory('ActivityFactory', function($resource, $http, CONFIG) {
     return {
         getAll: function($scope) {
             $http.get(CONFIG.api_url + '/activity/getall').then(function(data) {
@@ -43,7 +40,7 @@ angular.module('starter.services', ['ngResource'])
     };
 })
 
-.factory('HotelFactory', function($resource,$http,CONFIG) {
+.factory('HotelFactory', function($resource, $http, CONFIG) {
     return {
         getAll: function($scope) {
             $http.get(CONFIG.api_url + '/hotel/getall').then(function(data) {

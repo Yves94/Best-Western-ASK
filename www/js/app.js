@@ -18,9 +18,9 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     });
   });
 })
-    .constant("CONFIG", {
-      "api_url": "http://localhost/projetbwaskback/public/api"
-    })
+.constant("CONFIG", {
+  "api_url": "http://bw.dev/public/api"
+})
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -28,13 +28,14 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    .state('login', {
+
+  .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
       controller:'LoginCtrl'
   })
 
-    .state('result', {
+  .state('result', {
     url: '/result/:result',
     templateUrl: 'templates/result.html',
     controller: 'resultCtrl'
@@ -45,6 +46,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     templateUrl: 'templates/ask.html',
     controller: 'askCtrl'
   })
+
   .state('tab', {
     url: '/tab',
     abstract: true,

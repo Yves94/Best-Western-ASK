@@ -10,6 +10,21 @@ angular.module('starter.controllers', [])
     $scope.allFavoris = FavorisFactory.getAll($scope);
 })
 
+.controller('btnActionCtrl', function($scope) {
+    $scope.passer = function() {
+        // Prendre l'ID suivant (activité)
+    }
+
+    $scope.favoris = function() {
+        // Ajouter l'ID de l'activité à la liste des favoris
+
+    }
+
+    $scope.reserver = function() {
+        // Afficher un calendrier
+    }
+})
+
 .controller('historiqueCtrl', function($scope) {})
 
 .controller('profileCtrl', function($scope) {})
@@ -35,9 +50,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('askCtrl', function($scope, $state){
-  $scope.search = function(result){
-    $state.go('result',{result:result})
-  }
+    $scope.search = function(result){
+        $state.go('result',{result:result})
+    }
 })
 
 .controller('resultCtrl', function($scope, $stateParams){
