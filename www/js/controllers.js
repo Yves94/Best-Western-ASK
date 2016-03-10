@@ -1,12 +1,14 @@
 angular.module('starter.controllers', [])
 
 .controller('bestWesternCtrl', function($scope,ActivityFactory) {
-    $scope.activities = null;
-    $scope.activities = ActivityFactory.getAll($scope);
-
+    // recupere toutes les activitées et les set dans scope
+    ActivityFactory.getAll($scope);
 })
 
-.controller('favorisCtrl', function($scope) {})
+.controller('favorisCtrl', function($scope, FavorisFactory) {
+    $scope.allFavoris = null;
+    $scope.allFavoris = FavorisFactory.getAll($scope);
+})
 
 .controller('historiqueCtrl', function($scope) {})
 
@@ -19,16 +21,16 @@ angular.module('starter.controllers', [])
     $scope.login = function() {
 
       //Appel du service LoginService
-        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-          //Les identifiants sont correctes
-            $state.go('tab.accueil');
-        }).error(function(data) {
-          //les identifiants sont incorrectes
-            var alertPopup = $ionicPopup.alert({
-                title: 'Mauvais identifiant',
-                template: 'Vérifier vos informations'
-            });
-        });
+        LoginService.loginUser($scope.data.username, $scope.data.password).then(function(data) {
+            if(data.status == "success") {
+                $state.go('tab.accueil');
+            } else {
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Mauvais identifiant',
+                    template: 'Vérifier vos informations'
+                });
+            }
+        })
     }
 })
 

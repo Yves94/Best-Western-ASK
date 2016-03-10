@@ -18,7 +18,9 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     });
   });
 })
-
+    .constant("CONFIG", {
+      "api_url": "http://localhost/projetbwaskback/public/api"
+    })
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -56,7 +58,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     views: {
       'tab-accueil': {
         templateUrl: 'templates/accueil.html',
-        controller: 'bestWesternCtrl'
       }
     }
   })
@@ -65,6 +66,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     views: {
       'tab-activite': {
         templateUrl: 'templates/activite.html',
+        controller: 'bestWesternCtrl'
       }
     }
   })

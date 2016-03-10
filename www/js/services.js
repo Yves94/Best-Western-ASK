@@ -1,54 +1,56 @@
 angular.module('starter.services', ['ngResource'])
 
-
-.service('LoginService', function($q) {
+.service('LoginService', function($q,$http,CONFIG) {
     return {
         loginUser: function(name, pw) {
-            var deferred = $q.defer();
-            
-            var promise = deferred.promise;
-            //TODO REQUETE SQL CHECK IDENTIFIANTS 
-            if (name == 'test' && pw == 'test') {
-              //Lance l'éxécution done 
-                deferred.resolve('Bienvenue' + name + ' dans B.W\'Ask');
-            } else {
-              //Lance l'éxécution fail
-                deferred.reject('Mauvais identifiant');
-            }
-            
-            promise.success = function(fn) {
-                promise.then(fn);
-                return promise;
-            }
-            promise.error = function(fn) {
-                promise.then(null, fn);
-                return promise;
-            }
-         
-            //return promise;
-            return promise;
+            var def = $q.defer();
+            $http.post(CONFIG.api_url + '/user/connect', {'id':name,password:pw})
+                .success(function(data) {
+                    def.resolve(data);
+                })
+                .error(function() {
+                    def.reject("Failed request http loginservice");
+                });
+            return def.promise;
         }
     }
 })
 
-    .factory('ActivityFactory', function($resource,$http) {
-        return {
-            getAll: function($scope) {
-                /*var r =  $resource('http://localhost:8000/api/activity/getall');
-                return r.get()
-                    .$promise.then(function(data) {
-                        console.log(data.activities);
-                    });*/
-                $http.get('http://localhost/projetbwaskback/public/api/activity/getall').then(function(data) {
+.factory('FavorisFactory', function($resource, $http) {
+    return {
+        getAll: function($scope) {
+            $http.get(CONFIG.api_url + '/favoris/getall').then(function(data) {
+                if (typeof data.data.favoris != 'undefined') {
+                    $.each(data.data.favoris, function(index, value){
+                        console.log(value.title);
+                    });
+                    $scope.favoris = data.data.favoris;
+                }
+            });
+        }
+    };
+})
 
-                    if (typeof data.data.activities != 'undefined') {
-                        $.each(data.data.activities, function(index, value){
-                            console.log(value.title_en);
-                        });
-                        $scope.activities = data.data.activities;
-                    }
-                });
-            }
-        };
+.factory('ActivityFactory', function($resource,$http,CONFIG) {
+    return {
+        getAll: function($scope) {
+            $http.get(CONFIG.api_url + '/activity/getall').then(function(data) {
+                if (typeof data.data.activities != 'undefined') {
+                    $scope.activities = data.data.activities;
+                }
+            });
+        }
+    };
+})
 
-    });
+.factory('HotelFactory', function($resource,$http,CONFIG) {
+    return {
+        getAll: function($scope) {
+            $http.get(CONFIG.api_url + '/hotel/getall').then(function(data) {
+                if (typeof data.data.hotels != 'undefined') {
+                    $scope.hotels = data.data.activities;
+                }
+            });
+        }
+    };
+});

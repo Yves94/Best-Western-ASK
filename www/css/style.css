@@ -106,7 +106,7 @@ input:-ms-input-placeholder {
 .imgText {
 	position: absolute;
 	background-color: black;
-	top: 287px;
+	top: 240px;
 	width: 100%;
 	opacity: 0.7;
 	padding: 6px;
@@ -166,7 +166,6 @@ input:-ms-input-placeholder {
 	height: 20px;
 	background-color: #4190B7;
 	opacity: 0.4;
-	border-bottom: 1px solid #ddd;
 }
 .choice{
 	background-color: #4190b7;
