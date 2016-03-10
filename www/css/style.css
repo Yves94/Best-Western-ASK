@@ -168,7 +168,7 @@ input:-ms-input-placeholder {
 	opacity: 0.4;
 }
 .choice{
-	background-color: #4190b7;
+	background-color: #003d7e;
 }
 .logo-ask{
 	text-align: center;
@@ -204,7 +204,7 @@ h3{
 	text-align: center;
 }
 .propose{
-  background:#bfd70e;
+  background:#003d7e;
   border-radius:50%;
   width:100px;
   height:100px;
@@ -229,7 +229,7 @@ h3{
 
 #btn-control-propose button {
 	border-radius: 50%;
-	border: 5px solid #2d86b2;
+	border: 2px solid #2d86b2;
 	width: 100px;
 	height: 100px;
 	color: #fff;
