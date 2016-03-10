@@ -33,15 +33,20 @@ angular.module('starter.services', ['ngResource'])
 
     .factory('ActivityFactory', function($resource,$http) {
         return {
-            getAll: function() {
+            getAll: function($scope) {
                 /*var r =  $resource('http://localhost:8000/api/activity/getall');
                 return r.get()
                     .$promise.then(function(data) {
                         console.log(data.activities);
                     });*/
-                $http.get('http://localhost:8000/api/activity/getall').then(function(data) {
-                    console.log(data.data);
-                    return data.data;
+                $http.get('http://localhost/projetbwaskback/public/api/activity/getall').then(function(data) {
+
+                    if (typeof data.data.activities != 'undefined') {
+                        $.each(data.data.activities, function(index, value){
+                            console.log(value.title_en);
+                        });
+                        $scope.activities = data.data.activities;
+                    }
                 });
             }
         };
