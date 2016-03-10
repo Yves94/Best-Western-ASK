@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
 
       //Appel du service LoginService
         LoginService.loginUser($scope.data.username, $scope.data.password).then(function(data) {
-            if(data.status == "success") {
+            if(data.status != "error") {
                 $state.go('tab.accueil');
             } else {
                 var alertPopup = $ionicPopup.alert({
