@@ -1,0 +1,44 @@
+<ion-view title="Best Western" class="accueil">
+    <ion-content scroll="false" overflow-scroll="true" padding="false">
+        <div class="header-iphone"></div>
+        <div class="row">
+            <div class="col col-50 share">
+                <span class="ion-share"></span>
+            </div>
+            <div class="col col-50 filter">
+                <span class="ion-funnel"></span>
+            </div>
+            
+        </div>
+        <div style="text-align: center;">
+            <img src="img/Y4Gja4V2TgmF1BiSu2jK_bw1.jpg" height="auto" width="100%">
+            <div class="imgText">
+                <p>
+                Restaurant gastronomique haut de gamme spécialité culinaire
+                </p>
+            </div>
+        </div>
+     
+        <div id="btn-control">
+            <div class="tab-control">
+                <button style="background-color: #EB232E;">
+                    <span class="ion-close-round button-full"></span>
+                </button>
+                <div>Passer</div>
+            </div>
+            <div class="tab-control">
+                <button style="background-color: #EB9423;">
+                    <span class="ion-star"></span>
+                </button>
+                <div>Favoris</div>
+            </div>
+            <div class="tab-control">
+                <button ng-click="addDateInCalendar()" style="background-color: #2ABB6E;">
+                    <span class="ion-calendar"></span>
+                </button>
+                <div>Réserver</div>
+            </div>
+        </div>
+        <ion-list style=""></ion-list>
+    </ion-content>
+</ion-view>

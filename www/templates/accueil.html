@@ -1,44 +1,43 @@
-<ion-view title="Best Western" class="accueil">
+<ion-view title="Best Western" class="choice">
     <ion-content scroll="false" overflow-scroll="true" padding="false">
-        <div class="header-iphone"></div>
-        <div class="row">
-            <div class="col col-50 share">
-                <span class="ion-share"></span>
-            </div>
-            <div class="col col-50 filter">
-                <span class="ion-funnel"></span>
-            </div>
-            
-        </div>
-        <div style="text-align: center;">
-            <img src="img/Y4Gja4V2TgmF1BiSu2jK_bw1.jpg" height="auto" width="100%">
-            <div class="imgText">
-                <p>
-                Restaurant gastronomique haut de gamme spécialité culinaire
-                </p>
+        <div class="carousel" style="position: relative;">
+            <div class="img-service" style="position: absolute">
+                <img src="img/carousel_1-750x638.jpg" height="auto" width="100%">     
+            </div>      
+            <div class="desc-activite">
+                <p>Wish to play golf ?</p>
+                <p>Come to course.</p>
             </div>
         </div>
-     
-        <div id="btn-control">
-            <div class="tab-control">
-                <button style="background-color: #EB232E;">
-                    <span class="ion-close-round button-full"></span>
-                </button>
-                <div>Passer</div>
+        <div class="logo-ask">
+         <img src="img/Logo-ASK.png" >
+        </div>
+        <div class="input-content">
+            <input type="text" placeholder="Ex: Restaurant, Haircut" ng-model="data.search" class="search" style="height: 45px; color: #FFFFFF; font-size: 16px;">
+            <img src="img/Loupe-icon.png" class="input-img"alt="">
+        </div>
+        <h3>Your choice</h3>
+        <div id="btn-control-propose">
+            <a ui-sref="tab.activite">
+                <div class="tab-control-propose">
+                    <button style="background-color: #0f73a4; font-weight: bold; font-size: 15px; letter-spacing: 1px">
+                        <!-- <span class="ion-close-round button-full"></span> -->
+                        <!-- <p style="position: absolute; margin-top: 5%; margin-left: 3%;">Activity</p> -->
+                        <span><img src="img/Golfer-icon.png" alt="" style="width: 40%"></span>
+                    </button>
+                    <div>Activity</div>
+                </a>
             </div>
-            <div class="tab-control">
-                <button style="background-color: #EB9423;">
-                    <span class="ion-star"></span>
-                </button>
-                <div>Favoris</div>
-            </div>
-            <div class="tab-control">
-                <button ng-click="addDateInCalendar()" style="background-color: #2ABB6E;">
-                    <span class="ion-calendar"></span>
-                </button>
-                <div>Réserver</div>
+            <div class="tab-control-propose">
+                <a ui-sref="tab.activite">
+                    <button style="background-color: #0f73a4; font-weight: bold;font-size: 15px; letter-spacing: 1px">
+                        <!-- <p style="position: absolute; margin-top: 5%; margin-left: 3%;">Service</p> -->
+                        <!-- <span class="ion-calendar"></span> -->
+                        <span><img src="img/cocktail-icon.png" alt="" style="width: 45%"></span>
+                    </button>
+                    <div>Service</div>
+                </a>
             </div>
         </div>
-        <ion-list style=""></ion-list>
     </ion-content>
 </ion-view>
