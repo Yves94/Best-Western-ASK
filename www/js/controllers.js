@@ -5,7 +5,10 @@ angular.module('starter.controllers', [])
     ActivityFactory.getAll($scope);
 })
 
-.controller('favorisCtrl', function($scope) {})
+.controller('favorisCtrl', function($scope, FavorisFactory) {
+    $scope.allFavoris = null;
+    $scope.allFavoris = FavorisFactory.getAll($scope);
+})
 
 .controller('historiqueCtrl', function($scope) {})
 
