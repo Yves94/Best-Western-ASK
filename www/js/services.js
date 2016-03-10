@@ -40,5 +40,16 @@ angular.module('starter.services', ['ngResource'])
         };
 
     })
+    .factory('HotelFactory', function($resource,$http,CONFIG) {
+        return {
+            getAll: function($scope) {
+                $http.get(CONFIG.api_url+'/hotel/getall').then(function(data) {
+                    if (typeof data.data.hotels != 'undefined') {
+                        $scope.hotels = data.data.activities;
+                    }
+                });
+            }
+        };
+    })
 
 ;
