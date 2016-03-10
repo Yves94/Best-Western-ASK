@@ -11,14 +11,13 @@
             
         </div>
         <div style="text-align: center;">
-            <img src="img/Y4Gja4V2TgmF1BiSu2jK_bw1.jpg" height="auto" width="100%">
-            <div class="imgText">
-                <p>
-                Restaurant gastronomique haut de gamme spécialité culinaire
-                <br>
-                100 €
+            <img src="img/{{activity.cover}}" height="auto" width="100%">
+            <div class="imgText" >
+                <p ng-model="activity">
+                    {{ activity.title_en }}
+                    <br>
+                    {{ activity.price }}
                 </p>
-                <p ng-model="activities" ng-repeat="activity in activities">{{activity.title_en}}</p>
             </div>
         </div>
      

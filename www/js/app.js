@@ -19,7 +19,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
   });
 })
 .constant("CONFIG", {
-  "api_url": "http://bw.dev/public/api"
+  "api_url": "http://bw.dev/api"
 })
 .config(function($stateProvider, $urlRouterProvider) {
 

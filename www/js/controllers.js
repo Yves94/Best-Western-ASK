@@ -13,6 +13,9 @@ angular.module('starter.controllers', [])
 .controller('btnActionCtrl', function($scope) {
     $scope.passer = function() {
         // Prendre l'ID suivant (activité)
+        $scope.activityIndex = $scope.activityIndex + 1;
+        $scope.activity = $scope.activities[$scope.activityIndex];
+        console.log($scope.activityIndex);
     }
 
     $scope.favoris = function() {
