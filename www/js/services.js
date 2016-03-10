@@ -10,7 +10,7 @@ angular.module('starter.services', ['ngResource'])
             //TODO REQUETE SQL CHECK IDENTIFIANTS 
             if (name == 'test' && pw == 'test') {
               //Lance l'éxécution done 
-                deferred.resolve('Bienvenu' + name + ' dans B.W\'Ask');
+                deferred.resolve('Bienvenue' + name + ' dans B.W\'Ask');
             } else {
               //Lance l'éxécution fail
                 deferred.reject('Mauvais identifiant');
