@@ -1,12 +1,14 @@
 angular.module('starter.controllers', [])
 
-.controller('bestWesternCtrl', function($scope,ActivityFactory) {
+.controller('bestWesternCtrl', function($scope, ActivityFactory) {
     $scope.activities = null;
     $scope.activities = ActivityFactory.getAll($scope);
-
 })
 
-.controller('favorisCtrl', function($scope) {})
+.controller('favorisCtrl', function($scope, FavorisFactory) {
+    $scope.allFavoris = null;
+    $scope.allFavoris = FavorisFactory.getAll($scope);
+})
 
 .controller('historiqueCtrl', function($scope) {})
 

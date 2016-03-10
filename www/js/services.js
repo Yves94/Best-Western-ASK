@@ -1,6 +1,5 @@
 angular.module('starter.services', ['ngResource'])
 
-
 .service('LoginService', function($q) {
     return {
         loginUser: function(name, pw) {
@@ -24,31 +23,38 @@ angular.module('starter.services', ['ngResource'])
                 promise.then(null, fn);
                 return promise;
             }
-         
-            //return promise;
+    
             return promise;
         }
     }
 })
 
-    .factory('ActivityFactory', function($resource,$http) {
-        return {
-            getAll: function($scope) {
-                /*var r =  $resource('http://localhost:8000/api/activity/getall');
-                return r.get()
-                    .$promise.then(function(data) {
-                        console.log(data.activities);
-                    });*/
-                $http.get('http://localhost/projetbwaskback/public/api/activity/getall').then(function(data) {
+.factory('ActivityFactory', function($resource, $http) {
+    return {
+        getAll: function($scope) {
+            $http.get('http://bw.dev/api/activity/getall').then(function(data) {
+                if (typeof data.data.activities != 'undefined') {
+                    $.each(data.data.activities, function(index, value){
+                        console.log(value.title_en);
+                    });
+                    $scope.activities = data.data.activities;
+                }
+            });
+        }
+    };
+})
 
-                    if (typeof data.data.activities != 'undefined') {
-                        $.each(data.data.activities, function(index, value){
-                            console.log(value.title_en);
-                        });
-                        $scope.activities = data.data.activities;
-                    }
-                });
-            }
-        };
-
-    });
+.factory('FavorisFactory', function($resource, $http) {
+    return {
+        getAll: function($scope) {
+            $http.get('http://bw.dev/api/favoris/getall').then(function(data) {
+                if (typeof data.data.favoris != 'undefined') {
+                    $.each(data.data.favoris, function(index, value){
+                        console.log(value.title);
+                    });
+                    $scope.favoris = data.data.favoris;
+                }
+            });
+        }
+    };
+});
