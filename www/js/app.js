@@ -56,7 +56,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     views: {
       'tab-accueil': {
         templateUrl: 'templates/accueil.html',
-        controller: 'bestWesternCtrl'
       }
     }
   })
@@ -65,6 +64,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     views: {
       'tab-activite': {
         templateUrl: 'templates/activite.html',
+        controller: 'bestWesternCtrl'
       }
     }
   })
