@@ -1,19 +1,20 @@
 <ion-view title="Connexion" id="connexion" >
-  <ion-content padding="true" style="text-align: center;" scroll="false">
+  <ion-content style="text-align: center;" scroll="false">
+  <div class="header-iphone"></div>
     <!-- <img src="img/logo-3.png" style="width: 20%; height: auto; margin: 10px auto;"> -->
     <img src="img/Logo-ASK2.png" class="logo">
   
     <form>
       <label>
       <div class="input-content">
-        <input type="text" placeholder="Reward Number" ng-model="data.username" class="log" style="height: 45px; color: #FFFFFF; font-size: 16px;">
+        <input type="text" placeholder="Reward Number" ng-model="data.username" class="log" style="height: 45px; color: #FFFFFF; font-size: 16px;" ng-init="data.username='test'" value="test">
         <img src="img/profil-icon.png" class="input-img"alt="">
       </div>
     
   </label>
   <label>
     <div class="input-content">
-      <input type="text" placeholder="Last Name" ng-model="data.password" style="height: 45px; color: #FFFFFF;font-size: 16px">
+      <input type="text" placeholder="Last Name" ng-model="data.password" style="height: 45px; color: #FFFFFF;font-size: 16px" ng-init="data.password='test'" value="test">
       <img src="img/key-icon.png" class="input-img" alt="">
     </div>
     

@@ -1,7 +1,5 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
 .controller('bestWesternCtrl', function($scope,ActivityFactory) {
     $scope.activities = null;
     $scope.activities = ActivityFactory.getAll($scope);

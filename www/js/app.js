@@ -31,6 +31,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       templateUrl: 'templates/login.html',
       controller:'LoginCtrl'
   })
+
     .state('result', {
     url: '/result/:result',
     templateUrl: 'templates/result.html',
@@ -42,7 +43,6 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     templateUrl: 'templates/ask.html',
     controller: 'askCtrl'
   })
-
   .state('tab', {
     url: '/tab',
     abstract: true,
@@ -60,7 +60,14 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       }
     }
   })
-
+  .state('tab.activite', {
+    url:'/activity',
+    views: {
+      'tab-activite': {
+        templateUrl: 'templates/activite.html',
+      }
+    }
+  })
   .state('tab.favoris', {
     url: '/favoris',
     views: {
@@ -80,7 +87,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       }
     }
   })
-  
+
   .state('tab.profile', {
     url: '/profile',
     views: {
