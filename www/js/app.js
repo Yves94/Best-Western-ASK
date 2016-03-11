@@ -19,7 +19,8 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
   });
 })
 .constant("CONFIG", {
-  "api_url": "http://bw.dev/api"
+  //"api_url": "http://bw.dev/api"
+  "api_url":"http://localhost/projetbwaskback/public/api"
 })
 .config(function($stateProvider, $urlRouterProvider) {
 

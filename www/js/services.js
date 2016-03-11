@@ -33,7 +33,8 @@ angular.module('starter.services', ['ngResource'])
         getAll: function($scope) {
             $http.get(CONFIG.api_url + '/activity/getall').then(function(data) {
                 if (typeof data.data.activities != 'undefined') {
-                    $scope.activities = data.data.activities;
+                    console.log(data.data['activities']);
+                    $scope.activities = data.data['activities'];
                     $scope.activity = $scope.activities[0];
                     $scope.activityIndex = 0;
                     console.log($scope.activity);

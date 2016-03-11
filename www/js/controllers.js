@@ -3,6 +3,14 @@ angular.module('starter.controllers', [])
 .controller('bestWesternCtrl', function($scope,ActivityFactory) {
     // recupere toutes les activitées et les set dans scope
     ActivityFactory.getAll($scope);
+    $scope.passer = function() {
+        // Prendre l'ID suivant (activité)
+        $scope.activityIndex = $scope.activityIndex + 1;
+        //console.log($scope.activityIndex);
+        $scope.activity = $scope.activities[$scope.activityIndex];
+        console.log($scope.activity);
+
+    }
 })
 
 .controller('favorisCtrl', function($scope, FavorisFactory) {
@@ -14,8 +22,10 @@ angular.module('starter.controllers', [])
     $scope.passer = function() {
         // Prendre l'ID suivant (activité)
         $scope.activityIndex = $scope.activityIndex + 1;
+        //console.log($scope.activityIndex);
         $scope.activity = $scope.activities[$scope.activityIndex];
-        console.log($scope.activityIndex);
+        console.log($scope.activity);
+
     }
 
     $scope.favoris = function() {

@@ -10,26 +10,28 @@
             </div>
             
         </div>
-        <div style="text-align: center;">
+
+
+        <div style="text-align: center;" ng-model="activity">
             <img src="img/{{activity.cover}}" height="auto" width="100%">
             <div class="imgText" >
-                <p ng-model="activity">
+                <p >
                     {{ activity.title_en }}
                     <br>
-                    {{ activity.price }}
+                    {{ activity.price }} {{activityIndex}}
                 </p>
             </div>
         </div>
-     
+
         <div id="btn-control">
-            <div class="tab-control" ng-controller="btnActionCtrl">
+            <div class="tab-control" >
                 <button style="background-color: #EB232E;" ng-click="passer()">
                     <span class="ion-close-round button-full"></span>
                 </button>
                 <div>Passer</div>
             </div>
             <div class="tab-control" ng-controller="btnActionCtrl">
-                <button style="background-color: #EB9423;" ng-click="favoris()">
+                <button style="background-color: #EB9423;" ng-click="favoris()" ng-click="activityIndex=activityIndex+1">
                     <span class="ion-star"></span>
                 </button>
                 <div>Favoris</div>
