@@ -30,16 +30,17 @@
                 </button>
                 <div>Passer</div>
             </div>
-            <div class="tab-control" ng-controller="btnActionCtrl">
+            <div class="tab-control" >
+
                 <button style="background-color: #EB9423;" ng-click="favoris()" ng-click="activityIndex=activityIndex+1">
                     <span class="ion-star"></span>
                 </button>
                 <div>Favoris</div>
             </div>
-            <div class="tab-control" ng-controller="btnActionCtrl">
-                <button ng-click="addDateInCalendar()" style="background-color: #2ABB6E;" ng-click="reserver()">
-                    <span class="ion-calendar"></span>
-                </button>
+            <div class="tab-control">
+                <ionic-datepicker input-obj="datepickerObject">
+                    <button style="background-color: #2ABB6E;"><span class="ion-calendar"></span></button>
+                </ionic-datepicker>
                 <div>Réserver</div>
             </div>
         </div>
