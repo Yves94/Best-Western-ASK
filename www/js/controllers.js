@@ -37,7 +37,6 @@ angular.module('starter.controllers', [])
         });
 
         $http.post(CONFIG.api_url + '/favorite/add', data).success(function(data, status) {
-            // $scope.hello = data;
             console.log('OK SEND');
         })
     }
