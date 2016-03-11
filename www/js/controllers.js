@@ -28,15 +28,7 @@ angular.module('starter.controllers', [])
     }
 
     $scope.favoris = function() {
-        // Ajouter l'ID de l'activité à la liste des favoris
-        var data = $.param({
-            json: JSON.stringify({
-                id_user: 1,
-                id_activity: 1
-            })
-        });
-
-        $http.post(CONFIG.api_url + '/favorite/add', data).success(function(data, status) {
+        $http.post(CONFIG.api_url + '/favorite/add', {id_user: 1, id_activity: $scope.activity.id_activity}).success(function(data, status) {
             console.log('OK SEND');
         })
     }
@@ -59,6 +51,7 @@ angular.module('starter.controllers', [])
       //Appel du service LoginService
         LoginService.loginUser($scope.data.username, $scope.data.password).then(function(data) {
             if(data.status != "error") {
+                $scope.user = data;
                 $state.go('tab.accueil');
             } else {
                 var alertPopup = $ionicPopup.alert({
