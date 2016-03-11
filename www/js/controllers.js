@@ -14,8 +14,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('favorisCtrl', function($scope, FavorisFactory) {
-    $scope.allFavoris = null;
-    $scope.allFavoris = FavorisFactory.getAll($scope);
+    FavorisFactory.getAll($scope);
 })
 
 .controller('btnActionCtrl', function($scope, $http, CONFIG) {

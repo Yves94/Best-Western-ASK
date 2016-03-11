@@ -19,9 +19,9 @@ angular.module('starter.services', ['ngResource'])
 .factory('FavorisFactory', function($resource, $http, CONFIG) {
     return {
         getAll: function($scope) {
-            $http.get(CONFIG.api_url + '/favoris/getall').then(function(data) {
-                if (typeof data.data.favoris != 'undefined') {
-                    $scope.favoris = data.data.favoris;
+            $http.get(CONFIG.api_url + '/favorite/get/1').then(function(data) {
+                if (typeof data.data != 'undefined') {
+                    $scope.allFavoris = data.data;
                 }
             });
         }
