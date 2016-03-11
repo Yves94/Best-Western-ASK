@@ -18,11 +18,10 @@ angular.module('starter.controllers', [])
     $scope.allFavoris = FavorisFactory.getAll($scope);
 })
 
-.controller('btnActionCtrl', function($scope) {
+.controller('btnActionCtrl', function($scope, $http, CONFIG) {
     $scope.passer = function() {
         // Prendre l'ID suivant (activité)
         $scope.activityIndex = $scope.activityIndex + 1;
-        //console.log($scope.activityIndex);
         $scope.activity = $scope.activities[$scope.activityIndex];
         console.log($scope.activity);
 
@@ -30,7 +29,17 @@ angular.module('starter.controllers', [])
 
     $scope.favoris = function() {
         // Ajouter l'ID de l'activité à la liste des favoris
+        var data = $.param({
+            json: JSON.stringify({
+                id_user: 1,
+                id_activity: 1
+            })
+        });
 
+        $http.post(CONFIG.api_url + '/favorite/add', data).success(function(data, status) {
+            // $scope.hello = data;
+            console.log('OK SEND');
+        })
     }
 
     $scope.reserver = function() {
