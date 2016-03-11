@@ -32,8 +32,8 @@ angular.module('starter.services', ['ngResource'])
     return {
         getAll: function($scope) {
             $http.get(CONFIG.api_url + '/booking/getbyuser/1').then(function(data) {
-                if (typeof data.data != 'undefined') {
-                    $scope.allRegister = data.data;
+                if (typeof data.data['bookings'] != 'undefined') {
+                    $scope.allRegister = data.data['bookings'];
                 }
             });
         }

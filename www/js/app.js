@@ -88,7 +88,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     views: {
       'tab-historique': {
         templateUrl: 'templates/historique.html',
-        controller: 'historiqueCtrl'
+        controller: 'bookingCtrl'
       }
     }
   })
