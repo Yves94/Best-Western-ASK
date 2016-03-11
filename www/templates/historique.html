@@ -3,9 +3,10 @@
     <div class="header-iphone"></div>
         <h1 style="">Historique</h1>
         <ion-list style="">
-            <ion-item style="">08/03/2016 - Restaurant Plaza</ion-item>
-            <ion-item style="">02/03/2016 - Poney</ion-item>
-            <ion-item style="">01/03/2016 - Saut en parachute</ion-item>
+            <ion-item ng-model="allRegister" ng-repeat="register in allRegister">
+                {{ register.activity.title }}
+                {{ register.schedule_booking }}
+            </ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

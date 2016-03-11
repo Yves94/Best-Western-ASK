@@ -28,6 +28,18 @@ angular.module('starter.services', ['ngResource'])
     };
 })
 
+.factory('BookingFactory', function($resource, $http, CONFIG) {
+    return {
+        getAll: function($scope) {
+            $http.get(CONFIG.api_url + '/booking/getbyuser/1').then(function(data) {
+                if (typeof data.data != 'undefined') {
+                    $scope.allRegister = data.data;
+                }
+            });
+        }
+    };
+})
+
 .factory('ActivityFactory', function($resource, $http, CONFIG) {
     return {
         getAll: function($scope) {

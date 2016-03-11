@@ -17,6 +17,10 @@ angular.module('starter.controllers', [])
     FavorisFactory.getAll($scope);
 })
 
+.controller('bookingCtrl', function($scope, BookingFactory) {
+    BookingFactory.getAll($scope);
+})
+
 .controller('btnActionCtrl', function($scope, $http, CONFIG) {
     $scope.passer = function() {
         // Prendre l'ID suivant (activité)
